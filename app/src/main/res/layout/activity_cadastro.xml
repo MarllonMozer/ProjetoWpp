@@ -7,7 +7,7 @@
     tools:context=".CadastroActivity">
 
     <include
-        android:id="@+id/includeToolbar"
+        android:id="@+id/includeToolbarCadastro"
         layout="@layout/toolbar_customizada"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/includeToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbarCadastro">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editNome"
