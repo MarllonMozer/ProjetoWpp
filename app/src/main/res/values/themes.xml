@@ -3,7 +3,17 @@
     <style name="Base.Theme.ProjetoWpp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/primaria</item>
+        <item name="actionOverflowButtonStyle">
+            @style/ActionOverFlowButton
+        </item>
     </style>
-
+    <style name="ActionOverFlowButton" parent = "Widget.AppCompat.ActionButton.Overflow" >
+    <item name = "tint"> @color/white</item>"
+    </style>
+    
+    <style name="Circulo" >
+        <item name="cornerSize">50%</item>
+    </style>
+    
     <style name="Theme.ProjetoWpp" parent="Base.Theme.ProjetoWpp" />
 </resources>
