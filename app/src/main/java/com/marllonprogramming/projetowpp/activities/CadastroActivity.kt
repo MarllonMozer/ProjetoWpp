@@ -1,4 +1,4 @@
-package com.marllonprogramming.projetowpp
+package com.marllonprogramming.projetowpp.activities
 
 import android.content.Intent
 import android.os.Bundle

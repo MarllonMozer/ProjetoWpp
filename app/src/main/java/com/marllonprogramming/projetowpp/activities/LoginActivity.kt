@@ -1,14 +1,11 @@
-package com.marllonprogramming.projetowpp
+package com.marllonprogramming.projetowpp.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.marllonprogramming.projetowpp.databinding.ActivityLoginBinding
 import com.marllonprogramming.projetowpp.utils.exibirMensagem
 
@@ -39,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         val usuarioAtual = firebaseAuth.currentUser
         if (usuarioAtual != null) {
             startActivity(
-                Intent(this,MainActivity::class.java)
+                Intent(this, MainActivity::class.java)
             )
         }
     }
@@ -47,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
     private fun inicializarEventosClique() {
         binding.textCadastro.setOnClickListener {
             startActivity(
-                Intent(this,CadastroActivity::class.java)
+                Intent(this, CadastroActivity::class.java)
             )
         }
         binding.btnLogar.setOnClickListener { 
@@ -62,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnSuccessListener{
                 exibirMensagem("Logado com sucesso")
                 startActivity(
-                    Intent(this,MainActivity::class.java)
+                    Intent(this, MainActivity::class.java)
                 )
             }
             .addOnFailureListener { erro ->

@@ -1,4 +1,4 @@
-package com.marllonprogramming.projetowpp
+package com.marllonprogramming.projetowpp.activities
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -41,7 +41,6 @@ class PerfilActivity : AppCompatActivity() {
         } else {
             exibirMensagem("Nenhuma imagem selecionada")
         }
-
     }
 
 
