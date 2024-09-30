@@ -1,4 +1,4 @@
-package com.marllonprogramming.projetowpp
+package com.marllonprogramming.projetowpp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import com.marllonprogramming.projetowpp.R
 import com.marllonprogramming.projetowpp.adapter.ViewPagerAdapter
 import com.marllonprogramming.projetowpp.databinding.ActivityMainBinding
 
