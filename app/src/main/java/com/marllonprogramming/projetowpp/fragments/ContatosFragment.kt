@@ -2,7 +2,6 @@ package com.marllonprogramming.projetowpp.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import com.marllonprogramming.projetowpp.R
 import com.marllonprogramming.projetowpp.activities.MensagensActivity
 import com.marllonprogramming.projetowpp.adapter.ContatosAdapter
 import com.marllonprogramming.projetowpp.databinding.FragmentContatosBinding
@@ -43,8 +41,8 @@ class ContatosFragment : Fragment() {
         )
         contatosAdapter = ContatosAdapter{ usuario ->
             val intent = Intent(context, MensagensActivity::class.java)
-            intent.putExtra("dadosDestinatarios",usuario)
-            intent.putExtra("origem",Constantes.ORIGEM_CONTATO)
+            intent.putExtra("dadosDestinatario",usuario)
+            //intent.putExtra("origem",Constantes.ORIGEM_CONTATO)
             startActivity(intent)
         }
         binding.rvContatos.adapter = contatosAdapter
@@ -68,13 +66,14 @@ class ContatosFragment : Fragment() {
         por isso eu vou remover ele no OnDestroy .
         */
         eventoSnapshot = firestore
-            .collection("usuarios")
+            .collection(Constantes.USUARIOS)
             .addSnapshotListener { querySnapshot, error ->
                 val listaContatos = mutableListOf<Usuario>()
                 val documentos = querySnapshot?.documents
                 documentos?.forEach { documentSnapshot ->
                     val usuario = documentSnapshot.toObject(Usuario::class.java)
                     val idUsuarioLogado = firebaseAuth.currentUser?.uid
+
                     if (usuario != null && idUsuarioLogado != null) {
                         //Log.i("fragmento_contatos", "Usuario: ${usuario.nome}")
                         if (idUsuarioLogado != usuario.id) {
@@ -94,3 +93,4 @@ class ContatosFragment : Fragment() {
         eventoSnapshot.remove()
     }
 }
+
